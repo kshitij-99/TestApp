@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/layout3"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <com.camerakit.CameraKitView
+            android:id="@+id/camera"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/click"
+            android:src="@drawable/click"
+            android:layout_below="@id/camera"
+            android:layout_margin="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:visibility="gone"
+    android:id="@+id/layout1"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:background="@color/colorPrimaryDark"
+            android:layout_width="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/pp3"
+            android:layout_height="150dp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/til"
+            app:boxStrokeColor="@android:color/white"
+            app:boxBackgroundColor="@android:color/white"
+            android:outlineAmbientShadowColor="@android:color/background_dark"
+            android:outlineSpotShadowColor="@android:color/background_dark"
+            android:textColorHint="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_margin="50dp"
+            android:layout_below="@id/image"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                style="@style/EditTextTheme"
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHighlight="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:shadowColor="@android:color/background_dark"
+                android:textColor="@android:color/white"
+                android:cursorVisible="false"
+                android:focusableInTouchMode="true"
+                android:focusedByDefault="false"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:textSize="20sp" />
+        </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/sendotp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_below="@id/til"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginVertical="30dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="40dp"
+        android:text="Verify"
+        android:textAlignment="center"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
+<LinearLayout
+    android:id="@+id/layout2"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone"
+    android:gravity="center_horizontal"
+    android:background="@color/colorPrimaryDark"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:padding="16dp"
+        android:text="Verification Code"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please type the verification code sent to +xxxxxxxxxx"
+        android:textAlignment="center"
+        android:textColor="@android:color/white" />
+
+    <com.mukesh.OtpView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:inputType="number"
+        android:itemBackground="@drawable/bg_otp_item"
+        android:textColor="@android:color/white"
+        app:hideLineWhenFilled="true"
+        style="@style/OtpWidget.OtpView"
+        app:itemCount="6"
+        app:itemSpacing="6dp"
+        app:lineColor="#E50000"
+        app:state_filled="true"
+        app:viewType="line" />
+
+    <Button
+        android:id="@+id/validate_button"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Validate"
+        android:textColor="@android:color/white" />
+</LinearLayout>
+
+
+
+
+</LinearLayout>
